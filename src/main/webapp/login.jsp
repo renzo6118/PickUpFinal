@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+    <!-- Google account login -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,9 +86,29 @@
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                         </a>
-                        <a href="#" class="my-auto">
-                            <i class="fas fa-user fa-2x"></i>
-                        </a>
+                        <!-- Menú desplegable de usuario con condición de sesión -->
+<div class="dropdown my-auto">
+    <a href="#" class="dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-user fa-2x"></i>
+        <c:if test="${pageContext.request.userPrincipal != null}">
+    <span>${pageContext.request.userPrincipal.name}</span>
+</c:if>
+
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+        <% if (session.getAttribute("nombreUsuario") == null) { %>
+            <!-- Opciones para usuarios NO logeados -->
+            <li><a class="dropdown-item" href="login.jsp">Iniciar Sesión</a></li>
+            <li><a class="dropdown-item" href="register.jsp">Registrarse</a></li>
+        <% } else { %>
+            <!-- Opciones para usuarios logeados -->
+            <li><a class="dropdown-item" href="verCuenta.jsp">Ver Mi Cuenta</a></li>
+            <li><a class="dropdown-item" href="misDatos.jsp">Mis Datos</a></li>
+            <li><a class="dropdown-item" href="logout.jsp">Cerrar Sesión</a></li>
+        <% } %> <!-- Cierre del bloque else -->
+    </ul>
+</div>
+
                     </div>
                 </div>
             </nav>
@@ -117,33 +141,46 @@
     </div>
     <!-- Single Page Header End -->
 
-    <!-- Login Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <div class="bg-light p-5 rounded shadow">
-                        <h3 class="text-center text-primary mb-4">Inicio de Sesión</h3>
-                        <form action="${pageContext.request.contextPath}/login.jsp" method="POST">
-                            <div class="form-group mb-3">
-                                <label for="email" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu correo" required>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                                <a href="${pageContext.request.contextPath}/register.jsp" class="btn btn-link">Registrarse</a>
-                            </div>
-                        </form>
-                    </div>
+   <!-- Login Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="bg-light p-5 rounded shadow">
+                    <h3 class="text-center text-primary mb-4">Inicio de Sesión</h3>
+                    <form action="${pageContext.request.contextPath}/login" method="post">
+                        <div class="form-group mb-3">
+                            <label for="username" class="form-label">Correo Electrónico</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu correo" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                            
+                            <!-- Botón de Google Login -->
+<div id="g_id_onload"
+     data-client_id="99887984915-a8eprr4ji1u6n3tmrvgkeqvmnpsi3icq.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="http://localhost:8080/PickUpBackend/GoogleOAuthCallbackServlet"
+     data-auto_prompt="false">
+</div>
+<div class="g_id_signin" data-type="standard"></div>
+
+                            
+                            <a href="${pageContext.request.contextPath}/register.jsp" class="btn btn-link">Registrarse</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Login End -->
+</div>
+<!-- Login End -->
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">

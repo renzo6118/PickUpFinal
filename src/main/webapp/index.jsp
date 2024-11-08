@@ -78,9 +78,34 @@
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                         </a>
-                        <a href="${pageContext.request.contextPath}/login.jsp" class="my-auto">
-                            <i class="fas fa-user fa-2x"></i>
-                        </a>
+                        <!-- Menú desplegable de usuario con condición de sesión -->
+<div class="dropdown my-auto">
+    <a href="#" class="dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-user fa-2x"></i>
+        <c:if test="${sessionScope.nombreUsuario != null}">
+            <span>${sessionScope.nombreUsuario}</span>
+        </c:if>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+        <% if (session.getAttribute("nombreUsuario") == null) { %>
+            <!-- Opciones para usuarios NO logeados -->
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/login.jsp">Iniciar Sesión</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/register.jsp">Registrarse</a></li>
+        <% } else { %>
+            <!-- Opciones para usuarios logeados -->
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/verCuenta.jsp">Ver Mi Cuenta</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/misDatos.jsp">Mis Datos</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cambiarContrasena.jsp">Cambiar Contraseña</a></li>
+            <!-- Enlace único para cerrar sesión -->
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/LogoutServlet">Cerrar Sesión</a></li>
+        <% } %>
+    </ul>
+</div>
+
+
+
+
+
                     </div>
                 </div>
             </nav>

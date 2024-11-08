@@ -12,10 +12,10 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -27,73 +27,93 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
-
-    <!-- Navbar Start -->
-    <div class="container-fluid fixed-top">
-        <div class="container topbar bg-primary d-none d-lg-block">
-            <div class="d-flex justify-content-between">
-                <div class="top-info ps-2">
-                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Calle Los Mercurios 241</a></small>
-                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">atencionalcliente@pickup.com</a></small>
-                </div>
-                <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
-                </div>
+   <!-- Navbar Start -->
+   <div class="container-fluid fixed-top">
+    <div class="container topbar bg-primary d-none d-lg-block">
+        <div class="d-flex justify-content-between">
+            <div class="top-info ps-2">
+                <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Calle Los Mercurios 241</a></small>
+                <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">atencionalcliente@pickup.com</a></small>
             </div>
-        </div>
-        <div class="container px-0">
-            <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.jsp" class="navbar-brand"><h1 class="text-primary display-6">Pick Up</h1></a>
-                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-primary"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-                    <div class="navbar-nav mx-auto">
-                        <a href="index.jsp" class="nav-item nav-link active">Inicio</a>
-                        <a href="testimonial.jsp" class="nav-item nav-link">Nosotros</a>
-                        <a href="shop.jsp" class="nav-item nav-link">Productos</a>
-                        <a href="cart.jsp" class="nav-item nav-link">Membresía</a>
-                        <a href="contact.jsp" class="nav-item nav-link">Contáctanos</a>
-                    </div>
-                    <div class="d-flex m-3 me-0">
-                        <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
-                        <a href="cart.jsp" class="position-relative me-4 my-auto">
-                            <i class="fa fa-shopping-bag fa-2x"></i>
-                            <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                        </a>
-                        <a href="#" class="my-auto">
-                            <i class="fas fa-user fa-2x"></i>
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <!-- Navbar End -->
-
-    <!-- Modal Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Buscar por palabra clave</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center">
-                    <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="Palabra clave" aria-describedby="search-icon-1">
-                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                    </div>
-                </div>
+            <div class="top-link pe-2">
+                <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
+                <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
+                <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
             </div>
         </div>
     </div>
-    <!-- Modal Search End -->
+    <div class="container px-0">
+        <nav class="navbar navbar-light bg-white navbar-expand-xl">
+            <a href="index.jsp" class="navbar-brand"><h1 class="text-primary display-6">Pick Up</h1></a>
+            <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars text-primary"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
+                <div class="navbar-nav mx-auto">
+                    <a href="index.jsp" class="nav-item nav-link active">Inicio</a>
+                    <a href="testimonial.jsp" class="nav-item nav-link">Nosotros</a>
+                    <a href="shop.jsp" class="nav-item nav-link">Productos</a>
+                    <a href="cart.jsp" class="nav-item nav-link">Membresía</a>
+                    <a href="contact.jsp" class="nav-item nav-link">Contáctanos</a>
+                </div>
+                <div class="d-flex m-3 me-0">
+                    <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
+                    <a href="cart.jsp" class="position-relative me-4 my-auto">
+                        <i class="fa fa-shopping-bag fa-2x"></i>
+                        <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+                    </a>
+                    <!-- Menú desplegable de usuario con condición de sesión -->
+<div class="dropdown my-auto">
+    <a href="#" class="dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-user fa-2x"></i>
+        <% if (session.getAttribute("nombreUsuario") != null) { %>
+            <span><%= session.getAttribute("nombreUsuario") %></span>
+        <% } %>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+        <% if (session.getAttribute("nombreUsuario") == null) { %>
+            <!-- Opciones para usuarios NO logeados -->
+            <li><a class="dropdown-item" href="login.jsp">Iniciar Sesión</a></li>
+            <li><a class="dropdown-item" href="register.jsp">Registrarse</a></li>
+        <% } else { %>
+            <!-- Opciones para usuarios logeados -->
+            <li><a class="dropdown-item" href="verCuenta.jsp">Ver Mi Cuenta</a></li>
+            <li><a class="dropdown-item" href="misDatos.jsp">Mis Datos</a></li>
+            <li><a class="dropdown-item" href="logout.jsp">Cerrar Sesión</a></li>
+        <% } %> <!-- Cierre del bloque else -->
+    </ul>
+</div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
+
+<!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Buscar por palabra clave</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center">
+                <div class="input-group w-75 mx-auto d-flex">
+                    <input type="search" class="form-control p-3" placeholder="Palabra clave" aria-describedby="search-icon-1">
+                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Search End -->
 
     <!-- Single Page Header Start -->
     <div class="container-fluid page-header py-5">
@@ -101,7 +121,17 @@
     </div>
     <!-- Single Page Header End -->
 
-    <form action="${pageContext.request.contextPath}/registerServlet" method="post">
+    <!-- Mensajes de Error o Éxito -->
+    <div class="container mt-4">
+        <% String message = (String) request.getAttribute("message");
+           if (message != null) { %>
+            <div class="alert alert-info"><%= message %></div>
+        <% } %>
+    </div>
+
+    <!-- Formulario de Registro -->
+    <div class="container py-5">
+        <form action="${pageContext.request.contextPath}/registerServlet" method="post">
     <div class="form-group mb-3">
         <label for="nombre" class="form-label">Nombre Completo</label>
         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
@@ -122,12 +152,19 @@
         <label for="telefono" class="form-label">Teléfono</label>
         <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono" required>
     </div>
-    <div class="d-flex justify-content-between">
+
+    <<!-- Aquí va el widget de reCAPTCHA -->
+            <div class="form-group mb-3">
+                <div class="g-recaptcha" data-sitekey="6LfjVngqAAAAAFbDoOSKb_cuv6TrS5EC7WpjBn_G"></div>
+            </div>
+    
+    <div class="d-flex justify-content-between mt-3">
         <button type="submit" class="btn btn-primary">Registrarse</button>
         <a href="login.jsp" class="btn btn-link">Ya tengo una cuenta</a>
     </div>
 </form>
 
+    </div>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
@@ -218,7 +255,6 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
 </body>
 
 </html>

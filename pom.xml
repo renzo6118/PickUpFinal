@@ -14,20 +14,77 @@
     </properties>
 
     <dependencies>
-    <!-- Jakarta EE API -->
-    <dependency>
-        <groupId>jakarta.platform</groupId>
-        <artifactId>jakarta.jakartaee-api</artifactId>
-        <version>${jakartaee.version}</version>
-        <scope>provided</scope>
-    </dependency>
-    <!-- MySQL Connector -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.33</version>
-    </dependency>
-</dependencies>
+        <!-- Jakarta EE API -->
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>${jakartaee.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- MySQL Connector -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>5.8.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>5.8.4</version>
+        </dependency>
+
+        <!-- Spring JDBC -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>6.0.12</version>
+        </dependency>
+
+        <!-- MariaDB Connector -->
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+
+<!-- Google Account Login -->
+        <dependency>
+    <groupId>com.google.api-client</groupId>
+    <artifactId>google-api-client</artifactId>
+    <version>1.32.1</version>
+</dependency>
+<dependency>
+    <groupId>com.google.oauth-client</groupId>
+    <artifactId>google-oauth-client-jetty</artifactId>
+    <version>1.32.1</version>
+</dependency>
+<dependency>
+    <groupId>com.google.http-client</groupId>
+    <artifactId>google-http-client-jackson2</artifactId>
+    <version>1.40.1</version>
+</dependency>
+
+
+        <!-- JSTL for Jakarta EE -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

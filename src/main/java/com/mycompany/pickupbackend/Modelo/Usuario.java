@@ -11,12 +11,14 @@ package com.mycompany.pickupbackend.Modelo;
 public class Usuario 
 {
  
-    private int id;
+    private int id_usuario;
     private String nombre;
     private String email;
     private String password;
     private String direccion;
     private String telefono;
+    private int idMembresia;
+    private int idRol;
     
     public Usuario() { }
 
@@ -29,14 +31,14 @@ public class Usuario
         this.telefono = telefono;
     }
     
-    public int getId() 
+    public int getId_usuario() 
         {
-        return id;
+        return id_usuario;
         }
 
-        public void setId(int id) 
+        public void setId_usuario(int id) 
         {
-        this.id = id;
+        this.id_usuario = id;
         }
 
         public String getNombre()
@@ -88,6 +90,26 @@ public class Usuario
         public void setTelefono(String telefono) 
         {
         this.telefono = telefono;
+        }
+        
+        
+        public int getIdMembresia() {
+        return idMembresia;
+        }
+
+    
+        public void setIdMembresia(int idMembresia) {
+        this.idMembresia = idMembresia;
+        }
+
+    
+        public int getIdRol() {
+        return idRol;
+        }
+
+    
+        public void setIdRol(int idRol) {
+        this.idRol = idRol;
         }
 }
     
